@@ -10,9 +10,11 @@ const App = () => {
   const [isPending, startTransition] = useTransition()
 
   const changeHandler = (event) => {
-    setState(event.target.value)
+
+    const { value } = event.target;
+    setState(value)
     startTransition(() => {
-      setNumbers(counter(event.target.value))
+      setNumbers(counter(value))
     })
   }
 
